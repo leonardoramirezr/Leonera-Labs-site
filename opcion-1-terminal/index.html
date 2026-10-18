@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Leonardo Ramirez Rangel · Desarrollador de software | leoneralabs.com</title>
-  <meta name="description" content="Portafolio de Leonardo Ramirez Rangel, desarrollador de software. Apps web y móviles diseñadas, programadas y publicadas en Leonera Labs.">
+  <meta name="description" content="Portafolio de Leonardo Ramirez Rangel, desarrollador de software. Apps para iPhone y web diseñadas, programadas y publicadas en Leonera Labs.">
   <meta name="author" content="Leonardo Ramirez Rangel">
   <meta name="theme-color" content="#0e0d0b">
   <link rel="canonical" href="https://leoneralabs.com/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://leoneralabs.com/">
   <meta property="og:title" content="Leonardo Ramirez Rangel · Desarrollador de software">
-  <meta property="og:description" content="Apps web y móviles diseñadas, programadas y publicadas en Leonera Labs.">
+  <meta property="og:description" content="Apps para iPhone y web diseñadas, programadas y publicadas en Leonera Labs.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +54,7 @@
         <h1 class="hero__title">Hola, soy Leonardo.<br><span class="hl">Construyo apps de principio a fin.</span></h1>
         <p class="hero__lead">
           Soy Leonardo Ramirez Rangel, desarrollador de software. Leonera Labs es mi laboratorio:
-          aquí diseño, programo y llevo a producción apps web y móviles. Mi siguiente paso es sumarme a
+          aquí diseño, programo y llevo a producción apps para iPhone y para la web. Mi siguiente paso es sumarme a
           un gran equipo de ingeniería para construir productos que usen millones de personas.
         </p>
         <div class="actions">
@@ -71,75 +71,179 @@
         <pre class="term__body"><span class="line" style="--i:0"><span class="ps">$</span> whoami</span>
 <span class="line out" style="--i:1">leonardo-ramirez-rangel</span>
 <span class="line" style="--i:2"><span class="ps">$</span> cat rol.txt</span>
-<span class="line out" style="--i:3">Desarrollador de software · web y móvil</span>
-<span class="line" style="--i:4"><span class="ps">$</span> ls apps/</span>
-<span class="line out" style="--i:5"><b>melena/</b>  <b>rugido/</b>  <b>manada/</b>  <b>garra/</b></span>
+<span class="line out" style="--i:3">Desarrollador de software · iOS y web</span>
+<span class="line" style="--i:4"><span class="ps">$</span> ls apps/ | wc -l</span>
+<span class="line out" style="--i:5"><b>12</b></span>
 <span class="line" style="--i:6"><span class="ps">$</span> git log --oneline -1</span>
 <span class="line out" style="--i:7"><span class="hash">3f9c2e1</span> feat: listo para el siguiente gran reto</span>
 <span class="line" style="--i:8"><span class="ps">$</span> <span class="caret" aria-hidden="true"></span></span></pre>
       </div>
     </section>
 
-    <!-- EDITA: estas apps son EJEMPLOS. Reemplázalas por tus apps reales. -->
+    <!-- Proyectos publicados en https://leonardoramirezr.github.io/home/ -->
     <section class="section" id="apps">
       <div class="wrap">
         <header class="section__head">
           <p class="cmd" aria-hidden="true"><span class="ps">$</span> ls -l apps/</p>
           <h2 class="section__title">Apps</h2>
-          <p class="comment">// Diseñadas, programadas y publicadas por mí.</p>
+          <p class="comment">// 12 proyectos diseñados, programados y publicados por mí.</p>
         </header>
 
         <div class="apps">
           <article class="app">
-            <div class="app__top"><span>drwxr-xr-x</span><span>2025</span></div>
-            <h3 class="app__name">melena/</h3>
-            <p class="app__tagline">Finanzas personales sin fricción.</p>
-            <p class="app__desc">Registra gastos en segundos, define presupuestos por categoría y sigue tus metas de ahorro con gráficas claras.</p>
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">leo-os/</h3>
+            <p class="app__tagline">Un sistema de apps web con su propia pantalla de inicio.</p>
+            <p class="app__desc">Once apps que se instalan en el iPhone como un sistema propio: chat con IA para crear imágenes, préstamos, tarjetas con repetición espaciada, rutinas de gimnasio, dictado y más. Comparten cuenta y base de datos, sin un backend intermedio.</p>
             <dl class="app__meta">
-              <div><dt>plataforma</dt><dd>iOS · Android</dd></div>
-              <div><dt>stack</dt><dd>Flutter, Dart, Firebase</dd></div>
-              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>publicada</dd></div>
-            </dl>
-            <p class="app__links"><a href="#">-&gt; ver app</a><a href="#">-&gt; código</a></p>
-          </article>
-
-          <article class="app">
-            <div class="app__top"><span>drwxr-xr-x</span><span>2025</span></div>
-            <h3 class="app__name">rugido/</h3>
-            <p class="app__tagline">Tareas de equipo en tiempo real.</p>
-            <p class="app__desc">Tableros colaborativos con sincronización instantánea, menciones y notificaciones para equipos remotos.</p>
-            <dl class="app__meta">
-              <div><dt>plataforma</dt><dd>Web</dd></div>
-              <div><dt>stack</dt><dd>React, TypeScript, Node.js, PostgreSQL</dd></div>
+              <div><dt>plataforma</dt><dd>Web · instalable en iPhone</dd></div>
+              <div><dt>stack</dt><dd>SvelteKit, Svelte 5, TypeScript, PostgreSQL (Neon)</dd></div>
               <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>en producción</dd></div>
             </dl>
-            <p class="app__links"><a href="#">-&gt; ver app</a><a href="#">-&gt; código</a></p>
+            <p class="app__links"><a href="https://leo-os.is-cool.dev/">-&gt; ver app</a><a href="https://github.com/leonardoramirezr/leo-os">-&gt; código</a></p>
           </article>
 
           <article class="app">
-            <div class="app__top"><span>drwxr-xr-x</span><span>2024</span></div>
-            <h3 class="app__name">manada/</h3>
-            <p class="app__tagline">Planes con amigos, sin caos.</p>
-            <p class="app__desc">Propón planes, vota fechas y divide gastos en un mismo lugar. Se acabaron los chats de grupo interminables.</p>
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">incident-recorder/</h3>
+            <p class="app__tagline">Graba una incidencia con las dos cámaras y la pantalla en negro.</p>
+            <p class="app__desc">Graba con la cámara trasera y la frontal a la vez mientras la pantalla se ve apagada y las demás apps quedan bloqueadas. Guarda el video en bloques de un minuto con fecha y coordenadas, y los sube a Google Drive en cuanto hay internet.</p>
             <dl class="app__meta">
-              <div><dt>plataforma</dt><dd>iOS · Android</dd></div>
-              <div><dt>stack</dt><dd>React Native, Supabase</dd></div>
-              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>publicada</dd></div>
+              <div><dt>plataforma</dt><dd>iOS 17+</dd></div>
+              <div><dt>stack</dt><dd>Swift, SwiftUI, AVFoundation, Google Drive API</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>v0.2.0</dd></div>
             </dl>
-            <p class="app__links"><a href="#">-&gt; ver app</a><a href="#">-&gt; código</a></p>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/iOS-Incident-Recorder-by-Leonera/">-&gt; builds</a><a href="https://github.com/leonardoramirezr/iOS-Incident-Recorder-by-Leonera">-&gt; código</a></p>
           </article>
 
           <article class="app">
-            <div class="app__top"><span>-rwxr-xr-x</span><span>2024</span></div>
-            <h3 class="app__name">garra</h3>
-            <p class="app__tagline">Despliegues en un solo comando.</p>
-            <p class="app__desc">Herramienta de línea de comandos, de código abierto, que automatiza builds, pruebas y despliegues a la nube.</p>
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">meeting-assistant/</h3>
+            <p class="app__tagline">Graba la reunión y te entrega la minuta.</p>
+            <p class="app__desc">Graba hasta tres horas, incluso con la pantalla bloqueada. Transcribe por bloques con Whisper mientras sigue grabando y genera la minuta con un LLM (Groq, Gemini o cualquier API compatible con OpenAI), con estrategias como map-reduce o resumen acumulativo.</p>
             <dl class="app__meta">
-              <div><dt>plataforma</dt><dd>CLI · macOS · Linux</dd></div>
-              <div><dt>stack</dt><dd>Go, Docker, GitHub Actions</dd></div>
-              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>código abierto</dd></div>
+              <div><dt>plataforma</dt><dd>iOS</dd></div>
+              <div><dt>stack</dt><dd>Swift, SwiftUI, Whisper, Groq</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>v0.1.0</dd></div>
             </dl>
-            <p class="app__links"><a href="#">-&gt; documentación</a><a href="#">-&gt; código</a></p>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/iOS-Meeting-Assistant-by-Leonera/">-&gt; builds</a><a href="https://github.com/leonardoramirezr/iOS-Meeting-Assistant-by-Leonera">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">reminders/</h3>
+            <p class="app__tagline">Recordatorios que suenan como una alarma.</p>
+            <p class="app__desc">Usa AlarmKit para que cada recordatorio suene aunque el iPhone esté en silencio. Crea varios a la vez dictando una nota o fotografiando una lista o un recibo: la IA propone fechas y repeticiones y tú las revisas antes de guardar.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>iOS 26 · iPadOS 26</dd></div>
+              <div><dt>stack</dt><dd>Swift, SwiftUI, AlarmKit, Groq</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>v0.11.0</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/iOS-Leonera-Reminders/">-&gt; builds</a><a href="https://github.com/leonardoramirezr/iOS-Leonera-Reminders">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">vigilia/</h3>
+            <p class="app__tagline">La alarma que no se puede posponer.</p>
+            <p class="app__desc">Cada día suena un sonido distinto, de 90 sintetizados desde cero. Para apagarla hay que resolver cálculo mental y, si la detienes antes, vuelve a sonar. Lleva estadísticas de tus despertares con promedios, percentiles y gráficas.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>iOS 26</dd></div>
+              <div><dt>stack</dt><dd>Swift, SwiftUI, AlarmKit, Python</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>v0.6.0</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/iOS-Leonera-Alarm/">-&gt; builds</a><a href="https://github.com/leonardoramirezr/iOS-Leonera-Alarm">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">keyboard/</h3>
+            <p class="app__tagline">Un teclado con dos caracteres en cada tecla.</p>
+            <p class="app__desc">Tocar una tecla escribe el carácter principal y deslizar hacia abajo, el secundario. Teclas, filas y vibración se personalizan en un editor que exporta a JSON, y el dictado usa Whisper con una pasada de IA que corrige la puntuación.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>iOS · iPadOS</dd></div>
+              <div><dt>stack</dt><dd>Swift, SwiftUI, Keyboard Extension, Groq</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>v0.6.0</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/iOS-Leonera-Keyboard/">-&gt; builds</a><a href="https://github.com/leonardoramirezr/iOS-Leonera-Keyboard">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">paper/</h3>
+            <p class="app__tagline">Artículos y PDF guardados como Markdown para leer después.</p>
+            <p class="app__desc">Convierte páginas web y PDF (con OCR para los escaneados) a Markdown con sus imágenes. Se leen con varios estilos, se resaltan y se consulta el diccionario sin salir del texto; opcionalmente se respaldan en Google Drive.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>iOS</dd></div>
+              <div><dt>stack</dt><dd>Swift, SwiftUI, WebKit, PDFKit, Vision</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>v0.3.0</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/iOS-Leonera-Paper/">-&gt; builds</a><a href="https://github.com/leonardoramirezr/iOS-Leonera-Paper">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">chat/</h3>
+            <p class="app__tagline">Chat con IA para texto e imágenes.</p>
+            <p class="app__desc">Cliente nativo de OpenAI que retoma las respuestas aunque cierres la app, crea y edita imágenes, muestra Markdown y dicta con Whisper. Sus mini apps son prompts que te hacen preguntas antes de enviarse. Las API keys se guardan en el Llavero.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>iOS 17+</dd></div>
+              <div><dt>stack</dt><dd>Swift, SwiftUI, OpenAI API, Groq</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>v0.1.0</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/iOS-Leonera-Chat/">-&gt; builds</a><a href="https://github.com/leonardoramirezr/iOS-Leonera-Chat">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">repo-manager/</h3>
+            <p class="app__tagline">Secretos de GitHub en muchos repositorios a la vez.</p>
+            <p class="app__desc">Sube secretos de Actions, Dependabot, Codespaces o entornos a varios repositorios con presets, importa archivos .env y configura los métodos de merge y GitHub Pages desde el iPhone.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>iOS 17+</dd></div>
+              <div><dt>stack</dt><dd>Swift, SwiftUI, GitHub REST API</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>v0.4.0</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/iOS-Repo-Manager-by-Leonera/">-&gt; builds</a><a href="https://github.com/leonardoramirezr/iOS-Repo-Manager-by-Leonera">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">oculorum/</h3>
+            <p class="app__tagline">Expedientes clínicos para un consultorio de optometría.</p>
+            <p class="app__desc">Abre expedientes con número consecutivo y registra cada consulta: agudeza visual, lensometría y refracción, con captura rápida desde el teclado e impresión en hoja carta. Los datos nunca salen del navegador.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>Web</dd></div>
+              <div><dt>stack</dt><dd>Svelte, IndexedDB</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>en producción</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/oculorum-database/">-&gt; ver app</a><a href="https://github.com/leonardoramirezr/oculorum-database">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">markport/</h3>
+            <p class="app__tagline">De Markdown a PDF con tus propios estilos.</p>
+            <p class="app__desc">Exporta Markdown a PDF con plantillas de CSS y HTML propias, tipografías incluidas y el tamaño de página que marque el CSS, con miniaturas reales del documento. Todo ocurre en el navegador, sin backend.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>Web</dd></div>
+              <div><dt>stack</dt><dd>SvelteKit, Svelte 5, TypeScript, Vite</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>en producción</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/markport-web/">-&gt; ver app</a><a href="https://github.com/leonardoramirezr/markport-web">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2020</span></div>
+            <h3 class="app__name">telgit.com/</h3>
+            <p class="app__tagline">Sitio de una empresa de telecomunicaciones y seguridad.</p>
+            <p class="app__desc">Sitio corporativo que presenta las marcas que distribuye la empresa, sus proyectos industriales (CCTV, cableado estructurado, voz y datos) y los sistemas que ofrece, con sus datos de contacto.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>Web</dd></div>
+              <div><dt>stack</dt><dd>HTML, CSS, Bootstrap 4</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>publicado</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/telgit.com/">-&gt; ver sitio</a><a href="https://github.com/leonardoramirezr/telgit.com">-&gt; código</a></p>
           </article>
         </div>
       </div>
@@ -199,11 +303,12 @@
         <div class="file">
           <div class="file__bar"><span>stack.json</span><span class="dim">json</span></div>
           <pre class="file__body json"><code>{
-  <span class="k">"lenguajes"</span>: [<span class="s">"TypeScript"</span>, <span class="s">"JavaScript"</span>, <span class="s">"Python"</span>, <span class="s">"Dart"</span>, <span class="s">"Go"</span>, <span class="s">"SQL"</span>],
-  <span class="k">"frontend"</span>:  [<span class="s">"React"</span>, <span class="s">"Next.js"</span>, <span class="s">"HTML"</span>, <span class="s">"CSS"</span>],
-  <span class="k">"movil"</span>:     [<span class="s">"Flutter"</span>, <span class="s">"React Native"</span>],
-  <span class="k">"backend"</span>:   [<span class="s">"Node.js"</span>, <span class="s">"PostgreSQL"</span>, <span class="s">"Firebase"</span>, <span class="s">"Supabase"</span>],
-  <span class="k">"infra"</span>:     [<span class="s">"Docker"</span>, <span class="s">"GitHub Actions"</span>, <span class="s">"Cloudflare"</span>, <span class="s">"AWS"</span>],
+  <span class="k">"lenguajes"</span>: [<span class="s">"Swift"</span>, <span class="s">"TypeScript"</span>, <span class="s">"JavaScript"</span>, <span class="s">"Python"</span>, <span class="s">"SQL"</span>],
+  <span class="k">"ios"</span>:       [<span class="s">"SwiftUI"</span>, <span class="s">"AlarmKit"</span>, <span class="s">"AVFoundation"</span>, <span class="s">"PDFKit"</span>, <span class="s">"Vision"</span>],
+  <span class="k">"web"</span>:       [<span class="s">"Svelte"</span>, <span class="s">"SvelteKit"</span>, <span class="s">"Vite"</span>, <span class="s">"HTML"</span>, <span class="s">"CSS"</span>],
+  <span class="k">"datos"</span>:     [<span class="s">"PostgreSQL"</span>, <span class="s">"Neon"</span>, <span class="s">"IndexedDB"</span>],
+  <span class="k">"ia"</span>:        [<span class="s">"Whisper"</span>, <span class="s">"Groq"</span>, <span class="s">"OpenAI"</span>, <span class="s">"Gemini"</span>],
+  <span class="k">"infra"</span>:     [<span class="s">"GitHub Actions"</span>, <span class="s">"GitHub Pages"</span>, <span class="s">"XcodeGen"</span>, <span class="s">"Cloudflare"</span>],
   <span class="k">"aprendiendo"</span>: <span class="s">"siempre"</span>
 }</code></pre>
         </div>

@@ -1,5 +1,5 @@
 /* Opción 2 · Laboratorio
-   IBM Plex Mono (monoespaciada) en el logo, etiquetas, fichas y tabla del stack;
+   IBM Plex Mono (monoespaciada) en el logo, etiquetas, el perfil y los archivos del stack;
    IBM Plex Sans para titulares y texto. */
 
 :root {
@@ -107,10 +107,10 @@ a {
   text-decoration: none;
 }
 
+/* El logo es una ventana de código: barra con tres puntos y {L} adentro. */
 .tile {
-  position: relative;
   display: grid;
-  place-items: center;
+  grid-template-rows: 9px 1fr;
   width: 42px;
   height: 42px;
   border: 1.5px solid var(--ink);
@@ -119,30 +119,28 @@ a {
   flex: none;
 }
 
-.tile__num {
-  position: absolute;
-  top: 2px;
-  left: 4px;
-  font-family: var(--mono);
-  font-size: 8px;
-  font-weight: 600;
-  line-height: 1;
+.tile__bar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding-left: 4px;
+  background: var(--ink);
+}
+
+.tile__bar i {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--paper);
 }
 
 .tile__sym {
-  font-family: var(--sans);
-  font-size: 19px;
-  font-weight: 700;
-  line-height: 1;
-  margin-top: -2px;
-}
-
-.tile__name {
-  position: absolute;
-  bottom: 2px;
+  display: grid;
+  place-items: center;
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 14px;
   font-weight: 600;
+  letter-spacing: -0.04em;
   line-height: 1;
 }
 
@@ -262,7 +260,7 @@ a {
   color: var(--ink);
 }
 
-/* Ficha técnica */
+/* Resumen del perfil (perfil.yml) */
 
 .spec {
   border: 1.5px solid var(--ink);
@@ -397,63 +395,52 @@ a {
   text-align: right;
 }
 
-/* Elementos (logo de apps y tabla del stack) */
+/* Ventana con el ícono de cada proyecto */
 
-.el {
-  position: relative;
-  display: grid;
-  place-items: center;
-  aspect-ratio: 1;
+.win {
+  width: 210px;
   border: 1.5px solid var(--ink);
-  background: var(--card);
+  background: var(--accent);
+  box-shadow: 6px 6px 0 var(--ink);
 }
 
-.el__n {
-  position: absolute;
-  top: 6px;
-  left: 8px;
+.win__bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 10px;
+  background: var(--ink);
+  color: var(--paper);
   font-family: var(--mono);
   font-size: 11px;
-  font-weight: 500;
+  line-height: 1.2;
 }
 
-.el__s {
-  font-size: 30px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1;
-  margin-top: -6px;
+.win__bar i {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--paper);
 }
 
-.el__name {
-  position: absolute;
-  bottom: 7px;
-  left: 4px;
-  right: 4px;
-  font-family: var(--mono);
-  font-size: 10.5px;
-  text-align: center;
+.win__bar span {
+  margin-left: 6px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.el--big {
-  width: 128px;
-  background: var(--accent);
-  box-shadow: 6px 6px 0 var(--ink);
+.win__body {
+  display: grid;
+  place-items: center;
+  height: 112px;
+  color: var(--ink);
 }
 
-.el--big .el__n {
-  font-size: 13px;
-}
-
-.el--big .el__s {
-  font-size: 52px;
-}
-
-.el--big .el__name {
-  font-size: 12px;
+.win__body svg {
+  width: 60px;
+  height: 60px;
 }
 
 /* Apps */
@@ -473,7 +460,9 @@ a {
 
 .app__bar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 4px 16px;
   padding: 9px 16px;
   border-bottom: 1.5px solid var(--ink);
   font-family: var(--mono);
@@ -486,7 +475,7 @@ a {
   position: relative;
   display: grid;
   place-items: center;
-  height: 220px;
+  height: 210px;
   border-bottom: 1.5px solid var(--ink);
   background: repeating-linear-gradient(-45deg, transparent 0 9px, rgba(18, 18, 18, 0.07) 9px 10px);
 }
@@ -687,29 +676,71 @@ a {
   vertical-align: -2px;
 }
 
-.elements {
+.deps {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(124px, 1fr));
+  gap: 10px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.elements .el {
+/* Cada tecnología es un archivo con la esquina doblada. */
+.dep {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 96px;
+  padding: 10px 12px 12px;
+  border: 1.5px solid var(--ink);
   background: var(--c);
-  transition: transform 0.15s;
+  transition: transform 0.15s, box-shadow 0.15s;
 }
 
-.elements .el:hover {
+.dep::before {
+  content: "";
+  position: absolute;
+  top: -1.5px;
+  right: -1.5px;
+  width: 20px;
+  height: 20px;
+  border-bottom: 1.5px solid var(--ink);
+  border-left: 1.5px solid var(--ink);
+  background: linear-gradient(
+    to bottom left,
+    var(--paper) calc(50% - 1px),
+    var(--ink) calc(50% - 1px) calc(50% + 0.5px),
+    var(--card) calc(50% + 0.5px)
+  );
+}
+
+.dep:hover {
   transform: translate(-3px, -3px);
   box-shadow: 3px 3px 0 var(--ink);
 }
 
+.dep__ext {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
+.dep__name {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  overflow-wrap: break-word;
+}
+
 .c-lang { --c: #ffd2bd; }
-.c-front { --c: #d3ddff; }
-.c-mob { --c: #cdebd6; }
-.c-back { --c: #f4e3a6; }
+.c-ios { --c: #cdebd6; }
+.c-web { --c: #d3ddff; }
+.c-data { --c: #f4e3a6; }
+.c-ai { --c: #f6d3e6; }
 .c-infra { --c: #e2d8f4; }
 
 /* Contacto */
@@ -821,10 +852,6 @@ a {
   .hero {
     padding-top: 64px;
   }
-
-  .elements {
-    grid-template-columns: repeat(5, 1fr);
-  }
 }
 
 @media (max-width: 720px) {
@@ -865,26 +892,21 @@ a {
     text-align: left;
   }
 
-  .elements {
-    grid-template-columns: repeat(4, 1fr);
+  .deps {
+    grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+    gap: 8px;
   }
 
-  .el__s {
-    font-size: 24px;
+  .dep {
+    min-height: 84px;
   }
 
-  .el__name {
-    font-size: 9px;
+  .dep__name {
+    font-size: 15px;
   }
 
   .spec {
     box-shadow: 5px 5px 0 var(--ink);
-  }
-}
-
-@media (max-width: 400px) {
-  .elements {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 
