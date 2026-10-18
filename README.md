@@ -10,7 +10,7 @@ propio logo. Abre `index.html` (la página selectora) para compararlas y elegir 
 | | Opción | Estilo | Tipografía | ¿Monoespaciada? |
 |---|---|---|---|---|
 | <img src="opcion-1-terminal/logo.svg" alt="Logo opción 1" height="36"> | [1 · Terminal](opcion-1-terminal/) | Oscuro, inspirado en la línea de comandos | JetBrains Mono | **Sí**: en el logo y en todo el sitio |
-| <img src="opcion-2-laboratorio/logo.svg" alt="Logo opción 2" height="36"> | [2 · Laboratorio](opcion-2-laboratorio/) | Papel cuadriculado, fichas técnicas, tabla periódica del stack | IBM Plex Mono + IBM Plex Sans | **Sí**: en el logo, las etiquetas, las fichas y la tabla |
+| <img src="opcion-2-laboratorio/logo.svg" alt="Logo opción 2" height="36"> | [2 · Laboratorio](opcion-2-laboratorio/) | Papel cuadriculado y estética de editor de código: proyectos en ventanas y el stack como archivos | IBM Plex Mono + IBM Plex Sans | **Sí**: en el logo, las etiquetas, las fichas y el stack |
 | <img src="opcion-3-estudio/logo.svg" alt="Logo opción 3" height="36"> | [3 · Estudio de producto](opcion-3-estudio/) | Moderno y colorido, con maquetas de teléfono | Bricolage Grotesque + Inter | No |
 | <img src="opcion-4-editorial/logo.svg" alt="Logo opción 4" height="36"> | [4 · Editorial](opcion-4-editorial/) | Cálido, como una revista: casos de estudio, índice y capitulares | Fraunces + Instrument Sans | No |
 
@@ -18,8 +18,9 @@ Los cuatro sitios son HTML y CSS puros: no hay frameworks ni pasos de compilaci�
 funcionan bien en celular.
 
 > [!IMPORTANT]
-> Las apps que aparecen en los sitios (Melena, Rugido, Manada y Garra) son **ejemplos** para
-> mostrar el diseño. Cámbialas por tus apps reales antes de publicar (ver
+> Las opciones 1 y 2 ya muestran los 12 proyectos reales publicados en
+> <https://leonardoramirezr.github.io/home/>, con su stack. Las apps de las opciones 3 y 4
+> (Melena, Rugido, Manada y Garra) siguen siendo **ejemplos** para mostrar el diseño (ver
 > [Personalizar el contenido](#personalizar-el-contenido)).
 
 ## Estructura
@@ -178,7 +179,7 @@ después a Git**; tendrías que crear otro proyecto. Por eso se recomienda el m�
 ## Lista antes de publicar
 
 - [ ] Elegir una opción y cambiar el **Build output directory** a su carpeta.
-- [ ] Reemplazar las apps de ejemplo por las reales, con enlaces que funcionen.
+- [ ] Si eliges la opción 3 o 4, reemplazar las apps de ejemplo por los proyectos reales.
 - [ ] Revisar el correo, el usuario de LinkedIn, el stack y los números.
 - [ ] (Opcional) Agregar foto y CV.
 - [ ] Conectar `leoneralabs.com` y redirigir `www`.

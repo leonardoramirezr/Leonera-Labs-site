@@ -148,16 +148,24 @@ def opcion_2() -> None:
     paper, ink, accent = "#f3f1ec", "#121212", "#ff4d00"
 
     def tile(x: float, y: float, s: float) -> str:
-        num, _ = text_path("plexmono-600", "01", s * 0.17, x + s * 0.1, y + s * 0.24)
-        sym, w = text_path("plexsans-700", "Le", s * 0.5, 0, 0)
-        sym, _ = text_path("plexsans-700", "Le", s * 0.5, x + (s - w) / 2, y + s * 0.68)
-        lab, w = text_path("plexmono-600", "labs", s * 0.14, 0, 0)
-        lab, _ = text_path("plexmono-600", "labs", s * 0.14, x + (s - w) / 2, y + s * 0.88)
+        """Ventana de código: barra con tres puntos y «{L}» en el cuerpo."""
+        bar = s * 0.22
+        size = s * 0.36
+        sym, w = text_path("plexmono-600", "{L}", size, 0, 0, -0.04)
+        body_mid = y + bar + (s - bar) / 2
+        sym, _ = text_path("plexmono-600", "{L}", size, x + (s - w) / 2,
+                           body_mid + size * 0.36, -0.04)
+        dots = "".join(
+            f'<circle cx="{x + s * (0.13 + 0.1 * i):.1f}" cy="{y + bar / 2:.1f}" '
+            f'r="{s * 0.035:.1f}" fill="{paper}"/>'
+            for i in range(3)
+        )
         sw = s * 0.035
         return (
             f'<rect x="{x + sw / 2:.1f}" y="{y + sw / 2:.1f}" width="{s - sw:.1f}" '
             f'height="{s - sw:.1f}" fill="{accent}" stroke="{ink}" stroke-width="{sw:.1f}"/>\n'
-            f'<path fill="{ink}" d="{num} {sym} {lab}"/>'
+            f'<rect x="{x:.1f}" y="{y:.1f}" width="{s:.1f}" height="{bar:.1f}" fill="{ink}"/>\n'
+            f'{dots}\n<path fill="{ink}" d="{sym}"/>'
         )
 
     pad, s, h = 40, 104, 184
