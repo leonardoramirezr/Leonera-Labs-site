@@ -17,6 +17,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    // Aplica el tema elegido antes de pintar la página para que no parpadee.
+    try {
+      var tema = localStorage.getItem("tema");
+      if (tema === "light" || tema === "dark") document.documentElement.dataset.theme = tema;
+    } catch (e) {}
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -44,6 +51,10 @@
         <a href="#stack">./stack</a>
         <a href="#contacto">./contacto</a>
       </nav>
+      <button class="theme-toggle" type="button" aria-label="Cambiar tema" hidden>
+        <svg class="theme-toggle__sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
     </div>
   </header>
 
@@ -342,5 +353,51 @@
       <p class="dim">hecho a mano con HTML y CSS · <span class="ok">exit 0</span></p>
     </div>
   </footer>
+
+  <script>
+    // Botón de tema. Sin elección guardada, el sitio sigue el tema del sistema. Si eliges el
+    // mismo tema que el sistema, se borra la elección y el sitio vuelve a seguirlo.
+    (function () {
+      var root = document.documentElement;
+      var boton = document.querySelector(".theme-toggle");
+      var color = document.querySelector('meta[name="theme-color"]');
+      var sistemaClaro = window.matchMedia("(prefers-color-scheme: light)");
+
+      function temaSistema() {
+        return sistemaClaro.matches ? "light" : "dark";
+      }
+
+      function temaActual() {
+        return root.dataset.theme || temaSistema();
+      }
+
+      function actualizar() {
+        var oscuro = temaActual() === "dark";
+        boton.setAttribute("aria-label", oscuro ? "Cambiar a tema claro" : "Cambiar a tema oscuro");
+        boton.title = oscuro ? "Tema claro" : "Tema oscuro";
+        color.content = oscuro ? "#0e0d0b" : "#f7f4ee";
+      }
+
+      boton.addEventListener("click", function () {
+        var nuevo = temaActual() === "dark" ? "light" : "dark";
+        try {
+          if (nuevo === temaSistema()) {
+            delete root.dataset.theme;
+            localStorage.removeItem("tema");
+          } else {
+            root.dataset.theme = nuevo;
+            localStorage.setItem("tema", nuevo);
+          }
+        } catch (e) {
+          root.dataset.theme = nuevo;
+        }
+        actualizar();
+      });
+
+      sistemaClaro.addEventListener("change", actualizar);
+      boton.hidden = false;
+      actualizar();
+    })();
+  </script>
 </body>
 </html>

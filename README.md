@@ -9,13 +9,14 @@ propio logo. Abre `index.html` (la página selectora) para compararlas y elegir 
 
 | | Opción | Estilo | Tipografía | ¿Monoespaciada? |
 |---|---|---|---|---|
-| <img src="opcion-1-terminal/logo.svg" alt="Logo opción 1" height="36"> | [1 · Terminal](opcion-1-terminal/) | Oscuro, inspirado en la línea de comandos | JetBrains Mono | **Sí**: en el logo y en todo el sitio |
+| <img src="opcion-1-terminal/logo.svg" alt="Logo opción 1" height="36"> | [1 · Terminal](opcion-1-terminal/) | Inspirado en la línea de comandos, con tema oscuro y claro (sigue al sistema y tiene botón para cambiarlo) | JetBrains Mono | **Sí**: en el logo y en todo el sitio |
 | <img src="opcion-2-laboratorio/logo.svg" alt="Logo opción 2" height="36"> | [2 · Laboratorio](opcion-2-laboratorio/) | Papel cuadriculado y estética de editor de código: proyectos en ventanas y el stack como archivos | IBM Plex Mono + IBM Plex Sans | **Sí**: en el logo, las etiquetas, las fichas y el stack |
 | <img src="opcion-3-estudio/logo.svg" alt="Logo opción 3" height="36"> | [3 · Estudio de producto](opcion-3-estudio/) | Moderno y colorido, con maquetas de teléfono | Bricolage Grotesque + Inter | No |
 | <img src="opcion-4-editorial/logo.svg" alt="Logo opción 4" height="36"> | [4 · Editorial](opcion-4-editorial/) | Cálido, como una revista: casos de estudio, índice y capitulares | Fraunces + Instrument Sans | No |
 
 Los cuatro sitios son HTML y CSS puros: no hay frameworks ni pasos de compilación, y
-funcionan bien en celular.
+funcionan bien en celular. La opción 1 solo agrega un script pequeño para el botón de tema,
+que guarda la elección en el navegador.
 
 > [!IMPORTANT]
 > Las opciones 1 y 2 ya muestran los 12 proyectos reales publicados en
