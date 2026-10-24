@@ -34,7 +34,8 @@ case "$accion" in
     git archive "$commit" -- . "${excluir[@]}" | tar -x -C "previews/$rama"
 
     if [ "$rama" = main ]; then
-      find . -mindepth 1 -maxdepth 1 ! -name .git ! -name previews -exec rm -rf {} +
+      # CNAME configura el dominio personalizado de Pages y no viene del repositorio: se conserva.
+      find . -mindepth 1 -maxdepth 1 ! -name .git ! -name previews ! -name CNAME -exec rm -rf {} +
       git archive "$commit" -- . "${excluir[@]}" ':(exclude)previews' | tar -x
     fi
     mensaje="Publica $rama (${commit:0:7})"
