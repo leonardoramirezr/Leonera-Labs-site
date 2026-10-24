@@ -5,11 +5,12 @@ mostrar las apps que he desarrollado y presentarme como desarrollador ante empre
 talento de ingeniería.
 
 Este repositorio trae **cuatro propuestas de diseño** con el mismo contenido. Cada una tiene su
-propio logo. Abre `index.html` (la página selectora) para compararlas y elegir una.
+propio logo. La **opción 1 · Terminal** es el sitio principal y está en la raíz del repositorio. Para
+compararla con las demás, abre `opciones/index.html` (la página selectora).
 
 | | Opción | Estilo | Tipografía | ¿Monoespaciada? |
 |---|---|---|---|---|
-| <img src="opcion-1-terminal/logo.svg" alt="Logo opción 1" height="36"> | [1 · Terminal](opcion-1-terminal/) | Inspirado en la línea de comandos, con tema oscuro y claro (sigue al sistema y tiene botón para cambiarlo) | JetBrains Mono | **Sí**: en el logo y en todo el sitio |
+| <img src="logo.svg" alt="Logo opción 1" height="36"> | [1 · Terminal](./) (sitio principal) | Inspirado en la línea de comandos, con tema oscuro y claro (sigue al sistema y tiene botón para cambiarlo) | JetBrains Mono | **Sí**: en el logo y en todo el sitio |
 | <img src="opcion-2-laboratorio/logo.svg" alt="Logo opción 2" height="36"> | [2 · Laboratorio](opcion-2-laboratorio/) | Papel cuadriculado y estética de editor de código: proyectos en ventanas y el stack como archivos | IBM Plex Mono + IBM Plex Sans | **Sí**: en el logo, las etiquetas, las fichas y el stack |
 | <img src="opcion-3-estudio/logo.svg" alt="Logo opción 3" height="36"> | [3 · Estudio de producto](opcion-3-estudio/) | Moderno y colorido, con maquetas de teléfono | Bricolage Grotesque + Inter | No |
 | <img src="opcion-4-editorial/logo.svg" alt="Logo opción 4" height="36"> | [4 · Editorial](opcion-4-editorial/) | Cálido, como una revista: casos de estudio, índice y capitulares | Fraunces + Instrument Sans | No |
@@ -28,21 +29,53 @@ que guarda la elección en el navegador.
 
 ```
 .
-├── index.html                 Página selectora para comparar las 4 opciones
-├── previews/                  Capturas que usa la página selectora
-├── opcion-1-terminal/         Cada opción es un sitio completo e independiente:
-│   ├── index.html               la página
-│   ├── styles.css               los estilos
-│   ├── logo.svg                 el logo (con las letras convertidas a trazos)
-│   └── favicon.svg              el ícono de la pestaña
-├── opcion-2-laboratorio/
+├── index.html                   Sitio principal: opción 1 · Terminal
+├── styles.css                   Estilos del sitio principal
+├── logo.svg                     El logo (con las letras convertidas a trazos)
+├── favicon.svg                  El ícono de la pestaña
+├── capturas/                    Capturas que usa la página selectora
+├── opciones/
+│   └── index.html               Página selectora para comparar las 4 opciones
+├── opcion-2-laboratorio/        Cada opción es un sitio completo e independiente
 ├── opcion-3-estudio/
 ├── opcion-4-editorial/
-└── tools/generar_logos.py     Script que genera logo.svg y favicon.svg
+├── tools/
+│   ├── generar_logos.py         Script que genera logo.svg y favicon.svg
+│   └── publicar_pages.sh        Actualiza la rama gh-pages (lo usa el workflow)
+└── .github/workflows/pages.yml  Publica en GitHub Pages en cada push
 ```
 
 Cada carpeta `opcion-*` usa solo rutas relativas, así que puede publicarse tal cual como la raíz
 de `leoneralabs.com`.
+
+## Publicar en GitHub Pages
+
+El sitio se publica con GitHub Pages en modo **Deploy from a branch**, desde la rama `gh-pages`.
+Esa rama la actualiza sola el workflow `.github/workflows/pages.yml` con `tools/publicar_pages.sh`,
+así que no hace falta editarla a mano.
+
+Cada push a una rama actualiza `gh-pages`:
+
+| Rama | Dónde se publica |
+|---|---|
+| `main` | La raíz del sitio: <https://leonardoramirezr.github.io/Leonera-Labs-site/> |
+| Cualquier otra rama | `/previews/<rama>/`, con el contenido de su último commit |
+
+Por ejemplo, la rama `claude/confident-galileo-37sact` se ve en
+<https://leonardoramirezr.github.io/Leonera-Labs-site/previews/claude/confident-galileo-37sact/>.
+Al borrar una rama, su preview se quita.
+
+¿Por qué `gh-pages` y no `main`? Pages sirve una sola rama. Si fuera `main`, las vistas previas de
+las demás ramas tendrían que guardarse dentro de `main`.
+
+### Configuración (una sola vez)
+
+1. En GitHub, abre **Settings** → **Pages**.
+2. En **Build and deployment**, elige **Deploy from a branch**.
+3. En **Branch**, elige `gh-pages` y la carpeta `/ (root)`, y guarda.
+
+La rama `gh-pages` aparece en esa lista después de la primera ejecución del workflow, es decir,
+después de hacer push a `main` con este cambio.
 
 ## Ver el sitio en tu computadora
 
