@@ -3,228 +3,401 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>leoneralabs.com · 4 propuestas de sitio</title>
-  <meta name="description" content="Cuatro propuestas de diseño para el sitio de Leonardo Ramirez Rangel.">
-  <!-- Página solo para revisar las opciones: que no aparezca en buscadores. -->
-  <meta name="robots" content="noindex">
-  <link rel="icon" href="opcion-3-estudio/favicon.svg" type="image/svg+xml">
-  <style>
-    :root {
-      --bg: #f4f2ee;
-      --card: #ffffff;
-      --text: #1b1a17;
-      --muted: #67635b;
-      --line: #e2ded5;
-      --accent: #c2410c;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    }
-
-    .wrap {
-      width: min(100% - 32px, 1160px);
-      margin-inline: auto;
-    }
-
-    header {
-      padding: 64px 0 40px;
-    }
-
-    .kicker {
-      margin: 0 0 8px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-    }
-
-    .intro {
-      max-width: 62ch;
-      margin: 16px 0 0;
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      padding-bottom: 48px;
-    }
-
-    .option {
-      display: flex;
-      flex-direction: column;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--card);
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .option:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 40px rgba(27, 26, 23, 0.1);
-    }
-
-    .option:focus-visible {
-      outline: 3px solid var(--accent);
-      outline-offset: 3px;
-    }
-
-    .option img.preview {
-      display: block;
-      width: 100%;
-      height: auto;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .option__body {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      flex: 1;
-      padding: 22px 24px 24px;
-    }
-
-    .option__logo {
-      height: 44px;
-      width: auto;
-      align-self: flex-start;
-      border-radius: 6px;
-    }
-
-    .option h2 {
-      margin: 4px 0 0;
-      font-size: 22px;
-      letter-spacing: -0.01em;
-    }
-
-    .option p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .tags li {
-      padding: 3px 10px;
-      border-radius: 999px;
-      background: var(--bg);
-      font-size: 13px;
-    }
-
-    .tags .mono {
-      background: #1b1a17;
-      color: #fff;
-    }
-
-    .go {
-      margin-top: auto;
-      padding-top: 6px;
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    footer {
-      padding: 0 0 56px;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    @media (max-width: 760px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <title>Leonardo Ramirez Rangel · Desarrollador de software | leoneralabs.com</title>
+  <meta name="description" content="Portafolio de Leonardo Ramirez Rangel, desarrollador de software. Apps para iPhone y web diseñadas, programadas y publicadas en Leonera Labs.">
+  <meta name="author" content="Leonardo Ramirez Rangel">
+  <meta name="theme-color" content="#0e0d0b">
+  <link rel="canonical" href="https://leoneralabs.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://leoneralabs.com/">
+  <meta property="og:title" content="Leonardo Ramirez Rangel · Desarrollador de software">
+  <meta property="og:description" content="Apps para iPhone y web diseñadas, programadas y publicadas en Leonera Labs.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Aplica el tema elegido antes de pintar la página para que no parpadee.
+    try {
+      var tema = localStorage.getItem("tema");
+      if (tema === "light" || tema === "dark") document.documentElement.dataset.theme = tema;
+    } catch (e) {}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Leonardo Ramirez Rangel",
+    "jobTitle": "Desarrollador de software",
+    "url": "https://leoneralabs.com/",
+    "sameAs": ["https://github.com/leonardoramirezr"]
+  }
+  </script>
 </head>
 <body>
-  <header class="wrap">
-    <p class="kicker">leoneralabs.com</p>
-    <h1>Cuatro propuestas de sitio</h1>
-    <p class="intro">
-      Mismo contenido, cuatro personalidades distintas para el portafolio de Leonardo Ramirez Rangel.
-      Las opciones 1 y 2 usan una tipografía monoespaciada en el logo y en otras partes del sitio;
-      las opciones 3 y 4 no. Elige la que más te guste y sigue el README para publicarla.
-    </p>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="logo" href="#top" aria-label="leoneralabs.com, inicio">
+        <span class="logo__prompt" aria-hidden="true">&gt;</span>
+        <span>leoneralabs</span><span class="logo__tld">.com</span>
+        <span class="logo__cursor" aria-hidden="true"></span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#apps">./apps</a>
+        <a href="#sobre-mi">./sobre-mi</a>
+        <a href="#stack">./stack</a>
+        <a href="#contacto">./contacto</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Cambiar tema" hidden>
+        <svg class="theme-toggle__sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
   </header>
 
-  <main class="wrap grid">
-    <a class="option" href="opcion-1-terminal/">
-      <img class="preview" src="previews/opcion-1.jpg" alt="Vista previa de la opción 1: sitio estilo terminal en tema oscuro" width="1200" height="750" loading="lazy">
-      <div class="option__body">
-        <img class="option__logo" src="opcion-1-terminal/logo.svg" alt="Logo de la opción 1">
-        <h2>Opción 1 · Terminal</h2>
-        <p>Técnico, inspirado en la línea de comandos, con tema oscuro y claro. Las apps se listan como carpetas y el stack como un archivo JSON.</p>
-        <ul class="tags"><li class="mono">Monoespaciada: logo + todo el sitio</li><li>JetBrains Mono</li></ul>
-        <span class="go">Ver sitio →</span>
+  <main id="contenido">
+    <section class="hero wrap" id="top">
+      <div class="hero__text">
+        <p class="status"><span class="dot" aria-hidden="true"></span>abierto a nuevas oportunidades</p>
+        <h1 class="hero__title">Hola, soy Leonardo.<br><span class="hl">Construyo apps de principio a fin.</span></h1>
+        <p class="hero__lead">
+          Soy Leonardo Ramirez Rangel, desarrollador de software. Leonera Labs es mi laboratorio:
+          aquí diseño, programo y llevo a producción apps para iPhone y para la web. Mi siguiente paso es sumarme a
+          un gran equipo de ingeniería para construir productos que usen millones de personas.
+        </p>
+        <div class="actions">
+          <a class="btn btn--primary" href="#apps">$ ls apps/</a>
+          <a class="btn" href="#contacto">$ ./contacto.sh</a>
+        </div>
       </div>
-    </a>
 
-    <a class="option" href="opcion-2-laboratorio/">
-      <img class="preview" src="previews/opcion-2.jpg" alt="Vista previa de la opción 2: sitio claro estilo laboratorio de software" width="1200" height="750" loading="lazy">
-      <div class="option__body">
-        <img class="option__logo" src="opcion-2-laboratorio/logo.svg" alt="Logo de la opción 2">
-        <h2>Opción 2 · Laboratorio</h2>
-        <p>Papel cuadriculado y estética de editor de código: cada proyecto en una ventana y el stack como archivos. El logo es una ventana con {L}.</p>
-        <ul class="tags"><li class="mono">Monoespaciada: logo + etiquetas y fichas</li><li>IBM Plex Mono</li><li>IBM Plex Sans</li></ul>
-        <span class="go">Ver sitio →</span>
+      <div class="term" aria-label="Terminal de presentación">
+        <div class="term__bar">
+          <span class="term__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="term__title">leonardo@leonera: ~</span>
+        </div>
+        <pre class="term__body"><span class="line" style="--i:0"><span class="ps">$</span> whoami</span>
+<span class="line out" style="--i:1">leonardo-ramirez-rangel</span>
+<span class="line" style="--i:2"><span class="ps">$</span> cat rol.txt</span>
+<span class="line out" style="--i:3">Desarrollador de software · iOS y web</span>
+<span class="line" style="--i:4"><span class="ps">$</span> ls apps/ | wc -l</span>
+<span class="line out" style="--i:5"><b>12</b></span>
+<span class="line" style="--i:6"><span class="ps">$</span> git log --oneline -1</span>
+<span class="line out" style="--i:7"><span class="hash">3f9c2e1</span> feat: listo para el siguiente gran reto</span>
+<span class="line" style="--i:8"><span class="ps">$</span> <span class="caret" aria-hidden="true"></span></span></pre>
       </div>
-    </a>
+    </section>
 
-    <a class="option" href="opcion-3-estudio/">
-      <img class="preview" src="previews/opcion-3.jpg" alt="Vista previa de la opción 3: sitio de estudio de producto con teléfonos" width="1200" height="750" loading="lazy">
-      <div class="option__body">
-        <img class="option__logo" src="opcion-3-estudio/logo.svg" alt="Logo de la opción 3">
-        <h2>Opción 3 · Estudio de producto</h2>
-        <p>Moderno y colorido, como la página de una startup. Maquetas de teléfono y una melena geométrica como símbolo.</p>
-        <ul class="tags"><li>Bricolage Grotesque</li><li>Inter</li></ul>
-        <span class="go">Ver sitio →</span>
-      </div>
-    </a>
+    <!-- Proyectos publicados en https://leonardoramirezr.github.io/home/ -->
+    <section class="section" id="apps">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="cmd" aria-hidden="true"><span class="ps">$</span> ls -l apps/</p>
+          <h2 class="section__title">Apps</h2>
+          <p class="comment">// 12 proyectos diseñados, programados y publicados por mí.</p>
+        </header>
 
-    <a class="option" href="opcion-4-editorial/">
-      <img class="preview" src="previews/opcion-4.jpg" alt="Vista previa de la opción 4: sitio editorial estilo revista" width="1200" height="750" loading="lazy">
-      <div class="option__body">
-        <img class="option__logo" src="opcion-4-editorial/logo.svg" alt="Logo de la opción 4">
-        <h2>Opción 4 · Editorial</h2>
-        <p>Cálido y elegante, como una revista. Las apps se cuentan como casos de estudio con índice, citas y capitulares.</p>
-        <ul class="tags"><li>Fraunces</li><li>Instrument Sans</li></ul>
-        <span class="go">Ver sitio →</span>
+        <div class="apps">
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">leo-os/</h3>
+            <p class="app__tagline">Un sistema de apps web con su propia pantalla de inicio.</p>
+            <p class="app__desc">Once apps que se instalan en el iPhone como un sistema propio: chat con IA para crear imágenes, préstamos, tarjetas con repetición espaciada, rutinas de gimnasio, dictado y más. Comparten cuenta y base de datos, sin un backend intermedio.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>Web · instalable en iPhone</dd></div>
+              <div><dt>stack</dt><dd>SvelteKit, Svelte 5, TypeScript, PostgreSQL (Neon)</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>en producción</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leo-os.is-cool.dev/">-&gt; ver app</a><a href="https://github.com/leonardoramirezr/leo-os">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">incident-recorder/</h3>
+            <p class="app__tagline">Graba una incidencia con las dos cámaras y la pantalla en negro.</p>
+            <p class="app__desc">Graba con la cámara trasera y la frontal a la vez mientras la pantalla se ve apagada y las demás apps quedan bloqueadas. Guarda el video en bloques de un minuto con fecha y coordenadas, y los sube a Google Drive en cuanto hay internet.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>iOS 17+</dd></div>
+              <div><dt>stack</dt><dd>Swift, SwiftUI, AVFoundation, Google Drive API</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>v0.2.0</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/iOS-Incident-Recorder-by-Leonera/">-&gt; builds</a><a href="https://github.com/leonardoramirezr/iOS-Incident-Recorder-by-Leonera">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">meeting-assistant/</h3>
+            <p class="app__tagline">Graba la reunión y te entrega la minuta.</p>
+            <p class="app__desc">Graba hasta tres horas, incluso con la pantalla bloqueada. Transcribe por bloques con Whisper mientras sigue grabando y genera la minuta con un LLM (Groq, Gemini o cualquier API compatible con OpenAI), con estrategias como map-reduce o resumen acumulativo.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>iOS</dd></div>
+              <div><dt>stack</dt><dd>Swift, SwiftUI, Whisper, Groq</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>v0.1.0</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/iOS-Meeting-Assistant-by-Leonera/">-&gt; builds</a><a href="https://github.com/leonardoramirezr/iOS-Meeting-Assistant-by-Leonera">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">reminders/</h3>
+            <p class="app__tagline">Recordatorios que suenan como una alarma.</p>
+            <p class="app__desc">Usa AlarmKit para que cada recordatorio suene aunque el iPhone esté en silencio. Crea varios a la vez dictando una nota o fotografiando una lista o un recibo: la IA propone fechas y repeticiones y tú las revisas antes de guardar.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>iOS 26 · iPadOS 26</dd></div>
+              <div><dt>stack</dt><dd>Swift, SwiftUI, AlarmKit, Groq</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>v0.11.0</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/iOS-Leonera-Reminders/">-&gt; builds</a><a href="https://github.com/leonardoramirezr/iOS-Leonera-Reminders">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">vigilia/</h3>
+            <p class="app__tagline">La alarma que no se puede posponer.</p>
+            <p class="app__desc">Cada día suena un sonido distinto, de 90 sintetizados desde cero. Para apagarla hay que resolver cálculo mental y, si la detienes antes, vuelve a sonar. Lleva estadísticas de tus despertares con promedios, percentiles y gráficas.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>iOS 26</dd></div>
+              <div><dt>stack</dt><dd>Swift, SwiftUI, AlarmKit, Python</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>v0.6.0</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/iOS-Leonera-Alarm/">-&gt; builds</a><a href="https://github.com/leonardoramirezr/iOS-Leonera-Alarm">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">keyboard/</h3>
+            <p class="app__tagline">Un teclado con dos caracteres en cada tecla.</p>
+            <p class="app__desc">Tocar una tecla escribe el carácter principal y deslizar hacia abajo, el secundario. Teclas, filas y vibración se personalizan en un editor que exporta a JSON, y el dictado usa Whisper con una pasada de IA que corrige la puntuación.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>iOS · iPadOS</dd></div>
+              <div><dt>stack</dt><dd>Swift, SwiftUI, Keyboard Extension, Groq</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>v0.6.0</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/iOS-Leonera-Keyboard/">-&gt; builds</a><a href="https://github.com/leonardoramirezr/iOS-Leonera-Keyboard">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">paper/</h3>
+            <p class="app__tagline">Artículos y PDF guardados como Markdown para leer después.</p>
+            <p class="app__desc">Convierte páginas web y PDF (con OCR para los escaneados) a Markdown con sus imágenes. Se leen con varios estilos, se resaltan y se consulta el diccionario sin salir del texto; opcionalmente se respaldan en Google Drive.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>iOS</dd></div>
+              <div><dt>stack</dt><dd>Swift, SwiftUI, WebKit, PDFKit, Vision</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>v0.3.0</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/iOS-Leonera-Paper/">-&gt; builds</a><a href="https://github.com/leonardoramirezr/iOS-Leonera-Paper">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">chat/</h3>
+            <p class="app__tagline">Chat con IA para texto e imágenes.</p>
+            <p class="app__desc">Cliente nativo de OpenAI que retoma las respuestas aunque cierres la app, crea y edita imágenes, muestra Markdown y dicta con Whisper. Sus mini apps son prompts que te hacen preguntas antes de enviarse. Las API keys se guardan en el Llavero.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>iOS 17+</dd></div>
+              <div><dt>stack</dt><dd>Swift, SwiftUI, OpenAI API, Groq</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>v0.1.0</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/iOS-Leonera-Chat/">-&gt; builds</a><a href="https://github.com/leonardoramirezr/iOS-Leonera-Chat">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">repo-manager/</h3>
+            <p class="app__tagline">Secretos de GitHub en muchos repositorios a la vez.</p>
+            <p class="app__desc">Sube secretos de Actions, Dependabot, Codespaces o entornos a varios repositorios con presets, importa archivos .env y configura los métodos de merge y GitHub Pages desde el iPhone.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>iOS 17+</dd></div>
+              <div><dt>stack</dt><dd>Swift, SwiftUI, GitHub REST API</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>v0.4.0</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/iOS-Repo-Manager-by-Leonera/">-&gt; builds</a><a href="https://github.com/leonardoramirezr/iOS-Repo-Manager-by-Leonera">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">oculorum/</h3>
+            <p class="app__tagline">Expedientes clínicos para un consultorio de optometría.</p>
+            <p class="app__desc">Abre expedientes con número consecutivo y registra cada consulta: agudeza visual, lensometría y refracción, con captura rápida desde el teclado e impresión en hoja carta. Los datos nunca salen del navegador.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>Web</dd></div>
+              <div><dt>stack</dt><dd>Svelte, IndexedDB</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>en producción</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/oculorum-database/">-&gt; ver app</a><a href="https://github.com/leonardoramirezr/oculorum-database">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2026</span></div>
+            <h3 class="app__name">markport/</h3>
+            <p class="app__tagline">De Markdown a PDF con tus propios estilos.</p>
+            <p class="app__desc">Exporta Markdown a PDF con plantillas de CSS y HTML propias, tipografías incluidas y el tamaño de página que marque el CSS, con miniaturas reales del documento. Todo ocurre en el navegador, sin backend.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>Web</dd></div>
+              <div><dt>stack</dt><dd>SvelteKit, Svelte 5, TypeScript, Vite</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>en producción</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/markport-web/">-&gt; ver app</a><a href="https://github.com/leonardoramirezr/markport-web">-&gt; código</a></p>
+          </article>
+
+          <article class="app">
+            <div class="app__top"><span>drwxr-xr-x</span><span>2020</span></div>
+            <h3 class="app__name">telgit.com/</h3>
+            <p class="app__tagline">Sitio de una empresa de telecomunicaciones y seguridad.</p>
+            <p class="app__desc">Sitio corporativo que presenta las marcas que distribuye la empresa, sus proyectos industriales (CCTV, cableado estructurado, voz y datos) y los sistemas que ofrece, con sus datos de contacto.</p>
+            <dl class="app__meta">
+              <div><dt>plataforma</dt><dd>Web</dd></div>
+              <div><dt>stack</dt><dd>HTML, CSS, Bootstrap 4</dd></div>
+              <div><dt>estado</dt><dd><span class="dot" aria-hidden="true"></span>publicado</dd></div>
+            </dl>
+            <p class="app__links"><a href="https://leonardoramirezr.github.io/telgit.com/">-&gt; ver sitio</a><a href="https://github.com/leonardoramirezr/telgit.com">-&gt; código</a></p>
+          </article>
+        </div>
       </div>
-    </a>
+    </section>
+
+    <section class="section" id="sobre-mi">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="cmd" aria-hidden="true"><span class="ps">$</span> cat sobre-mi.md</p>
+          <h2 class="section__title">Sobre mí</h2>
+        </header>
+
+        <div class="about">
+          <div class="file">
+            <div class="file__bar"><span>sobre-mi.md</span><span class="dim">utf-8</span></div>
+            <div class="file__body">
+              <p>
+                Me apasiona convertir ideas en productos reales. Leonera Labs nació como mi espacio para
+                experimentar: cada app es una excusa para aprender algo nuevo —una arquitectura, un lenguaje,
+                una forma de diseñar— y llevarlo hasta las manos de usuarios reales.
+              </p>
+              <p>
+                Me importa el código que se puede mantener: pruebas automatizadas, revisiones de código,
+                integración continua y buena documentación. Hoy busco llevar esa forma de trabajar a un
+                equipo grande, con problemas grandes.
+              </p>
+              <h3 class="md-h"><span class="md-mark" aria-hidden="true">## </span>¿Por qué «Leonera»?</h3>
+              <p>
+                <em>Leo</em>, de Leonardo. Y una <em>leonera</em> es el lugar donde viven los leones.
+                Es mi guarida para construir.
+              </p>
+            </div>
+          </div>
+
+          <div class="file">
+            <div class="file__bar"><span>principios.txt</span><span class="dim">4 líneas</span></div>
+            <ol class="file__body principles">
+              <li><strong>Producto primero.</strong> Entiendo el problema antes de escribir código.</li>
+              <li><strong>Calidad medible.</strong> Pruebas, CI/CD y monitoreo desde el día uno.</li>
+              <li><strong>Rápido y accesible.</strong> Apps que cargan rápido y que todos pueden usar.</li>
+              <li><strong>Comunicación clara.</strong> PRs pequeños, documentación y feedback constante.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDITA: ajusta tu stack real. -->
+    <section class="section" id="stack">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="cmd" aria-hidden="true"><span class="ps">$</span> cat stack.json</p>
+          <h2 class="section__title">Stack</h2>
+          <p class="comment">// Las herramientas con las que trabajo a diario.</p>
+        </header>
+
+        <div class="file">
+          <div class="file__bar"><span>stack.json</span><span class="dim">json</span></div>
+          <pre class="file__body json"><code>{
+  <span class="k">"lenguajes"</span>: [<span class="s">"Swift"</span>, <span class="s">"TypeScript"</span>, <span class="s">"JavaScript"</span>, <span class="s">"Python"</span>, <span class="s">"SQL"</span>],
+  <span class="k">"ios"</span>:       [<span class="s">"SwiftUI"</span>, <span class="s">"AlarmKit"</span>, <span class="s">"AVFoundation"</span>, <span class="s">"PDFKit"</span>, <span class="s">"Vision"</span>],
+  <span class="k">"web"</span>:       [<span class="s">"Svelte"</span>, <span class="s">"SvelteKit"</span>, <span class="s">"Vite"</span>, <span class="s">"HTML"</span>, <span class="s">"CSS"</span>],
+  <span class="k">"datos"</span>:     [<span class="s">"PostgreSQL"</span>, <span class="s">"Neon"</span>, <span class="s">"IndexedDB"</span>],
+  <span class="k">"ia"</span>:        [<span class="s">"Whisper"</span>, <span class="s">"Groq"</span>, <span class="s">"OpenAI"</span>, <span class="s">"Gemini"</span>],
+  <span class="k">"infra"</span>:     [<span class="s">"GitHub Actions"</span>, <span class="s">"GitHub Pages"</span>, <span class="s">"XcodeGen"</span>, <span class="s">"Cloudflare"</span>],
+  <span class="k">"aprendiendo"</span>: <span class="s">"siempre"</span>
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDITA: cambia el correo y tu usuario de LinkedIn. -->
+    <section class="section contact" id="contacto">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="cmd" aria-hidden="true"><span class="ps">$</span> ./contacto.sh --help</p>
+          <h2 class="section__title">¿Construimos algo juntos?</h2>
+          <p class="contact__lead">
+            Estoy abierto a posiciones de ingeniería de software en equipos que construyen a gran escala.
+            Escríbeme y platicamos.
+          </p>
+        </header>
+
+        <ul class="flags">
+          <li><span class="flag">--email</span><a href="mailto:hola@leoneralabs.com">hola@leoneralabs.com</a></li>
+          <li><span class="flag">--github</span><a href="https://github.com/leonardoramirezr">github.com/leonardoramirezr</a></li>
+          <li><span class="flag">--linkedin</span><a href="https://www.linkedin.com/in/TU-USUARIO">linkedin.com/in/tu-usuario</a></li>
+        </ul>
+      </div>
+    </section>
   </main>
 
-  <footer class="wrap">
-    Las opciones 1 y 2 muestran los 12 proyectos reales. Las apps de las opciones 3 y 4 (Melena, Rugido, Manada y Garra) son ejemplos para mostrar el diseño.
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© 2026 Leonardo Ramirez Rangel · leoneralabs.com</p>
+      <p class="dim">hecho a mano con HTML y CSS · <span class="ok">exit 0</span></p>
+    </div>
   </footer>
+
+  <script>
+    // Botón de tema. Sin elección guardada, el sitio sigue el tema del sistema. Si eliges el
+    // mismo tema que el sistema, se borra la elección y el sitio vuelve a seguirlo.
+    (function () {
+      var root = document.documentElement;
+      var boton = document.querySelector(".theme-toggle");
+      var color = document.querySelector('meta[name="theme-color"]');
+      var sistemaClaro = window.matchMedia("(prefers-color-scheme: light)");
+
+      function temaSistema() {
+        return sistemaClaro.matches ? "light" : "dark";
+      }
+
+      function temaActual() {
+        return root.dataset.theme || temaSistema();
+      }
+
+      function actualizar() {
+        var oscuro = temaActual() === "dark";
+        boton.setAttribute("aria-label", oscuro ? "Cambiar a tema claro" : "Cambiar a tema oscuro");
+        boton.title = oscuro ? "Tema claro" : "Tema oscuro";
+        color.content = oscuro ? "#0e0d0b" : "#f7f4ee";
+      }
+
+      boton.addEventListener("click", function () {
+        var nuevo = temaActual() === "dark" ? "light" : "dark";
+        try {
+          if (nuevo === temaSistema()) {
+            delete root.dataset.theme;
+            localStorage.removeItem("tema");
+          } else {
+            root.dataset.theme = nuevo;
+            localStorage.setItem("tema", nuevo);
+          }
+        } catch (e) {
+          root.dataset.theme = nuevo;
+        }
+        actualizar();
+      });
+
+      sistemaClaro.addEventListener("change", actualizar);
+      boton.hidden = false;
+      actualizar();
+    })();
+  </script>
 </body>
 </html>

@@ -1,0 +1,40 @@
+name: Publicar Pages y previews
+
+# Cada push a una rama actualiza gh-pages: main va a la raíz del sitio y
+# cualquier rama va a previews/<rama>/. Al borrar una rama se quita su preview.
+on:
+  push:
+    branches-ignore:
+      - gh-pages
+  delete:
+
+permissions:
+  contents: write
+
+# Las publicaciones se hacen una a la vez para que no se pisen en gh-pages.
+concurrency:
+  group: publicar-pages
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    if: github.event_name == 'push' || github.event.ref_type == 'branch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio con todas las ramas
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Publicar la rama en gh-pages
+        if: github.event_name == 'push'
+        env:
+          RAMA: ${{ github.ref_name }}
+          COMMIT: ${{ github.sha }}
+        run: tools/publicar_pages.sh publicar "$RAMA" "$COMMIT"
+
+      - name: Quitar el preview de la rama borrada
+        if: github.event_name == 'delete'
+        env:
+          RAMA: ${{ github.event.ref }}
+        run: tools/publicar_pages.sh borrar "$RAMA"

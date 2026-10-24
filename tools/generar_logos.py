@@ -132,7 +132,7 @@ def opcion_1() -> None:
         f'<path fill="{text}" d="{p_name}"/>\n'
         f'<path fill="{muted}" d="{p_tld}"/>\n{cursor}'
     )
-    write("opcion-1-terminal", "logo.svg", svg(width, h, body, "leoneralabs.com"))
+    write(".", "logo.svg", svg(width, h, body, "leoneralabs.com"))
 
     p_fav, w = text_path("jbm-700", ">", 40, 10, 44)
     fav = (
@@ -140,7 +140,7 @@ def opcion_1() -> None:
         f'<path fill="{accent}" d="{p_fav}"/>\n'
         f'<rect x="36" y="38" width="18" height="7" rx="1" fill="{text}"/>'
     )
-    write("opcion-1-terminal", "favicon.svg", svg(64, 64, fav, "leoneralabs.com"))
+    write(".", "favicon.svg", svg(64, 64, fav, "leoneralabs.com"))
 
 
 # ---------------------------------------------------------------- Opción 2
